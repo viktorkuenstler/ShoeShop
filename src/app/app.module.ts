@@ -9,7 +9,7 @@ import { HelloComponent } from './hello.component';
 import { ListOfProductsComponent } from './backend/list-of-products/list-of-products.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, MatToolbarModule],
   declarations: [AppComponent, HelloComponent, ListOfProductsComponent],
   bootstrap: [AppComponent],
 })
