@@ -1,5 +1,13 @@
-<hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
-<button id="backendButton" class="button" (click)="onClickgGoToBackend($event)">Backend</button>
+<button id="backendButton" class="button" (click)="onClickgGoToBackend($event)">
+  Backend
+</button>
 
-
+<li>
+  <a
+    routerLink="/list-of-products"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    >First Component</a
+  >
+  <router-outlet></router-outlet>
+</li>

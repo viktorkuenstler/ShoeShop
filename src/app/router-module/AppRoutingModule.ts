@@ -5,7 +5,6 @@ import { AppComponent } from '../app.component';
 import { ListOfProductsComponent } from '../backend/list-of-products/list-of-products.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
   { path: 'list-of-products', component: ListOfProductsComponent },
 ];
 
