@@ -1,3 +1,18 @@
-<p>
-list-of-products works!
-</p>
+<table class="listOfProductsTable">
+  <tr>
+    <th>Article Number</th>
+    <th>Name</th>
+    <th>Year of Publication</th>
+    <th>Price</th>
+    <th>Edit</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{ product.articleNumer }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.yearOfPublication | date: 'short' }}</td>
+    <td>{{ product.price }}</td>
+    <td>
+      <button type="button" mat-button><mat-icon>edit</mat-icon></button>
+    </td>
+  </tr>
+</table>
