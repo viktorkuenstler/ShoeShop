@@ -15,4 +15,10 @@ export class AppComponent {
   onClickgGoToBackend(event?: MouseEvent) {
     this.router.navigate(['/list-of-products']);
   }
+
+  onClickgGoToCreateProduct(event?: MouseEvent) {
+    this.router.navigate(['/create-product']);
+  }
+
+  
 }

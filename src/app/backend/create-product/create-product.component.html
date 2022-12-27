@@ -1,0 +1,36 @@
+<form class="example-form">
+  <table class="createProdoctTable">
+    <tr>
+      <td colspan="2">Create a product</td>
+    </tr>
+    <tr>
+      <td>Article Number:</td>
+      <td>
+        <input name="articleNumber" [(ngModel)]="product.articleNumber" />
+      </td>
+    </tr>
+    <tr>
+      <td>Name:</td>
+      <td>
+        <input name="name" [(ngModel)]="product.name" />
+      </td>
+    </tr>
+    <!--
+  <tr>
+    <td>Year of Publication:</td>
+    <td><input type="date" /></td>
+  </tr>
+
+-->
+    <tr>
+      <td>Price:</td>
+      <td><input name="price" [(ngModel)]="product.price" /></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button (click)="onSave()">Save</button>
+      </td>
+    </tr>
+  </table>
+</form>
