@@ -48,6 +48,8 @@ export class CreateProductComponent implements OnInit {
         }
       }
 
+      this.product.id = maxId;
+
       console.log('Wurde gespeichert' + this.product);
       console.log('Inhalt Produktliste:' + productList);
 

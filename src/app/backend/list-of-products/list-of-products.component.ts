@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../DataTransferObjects/Product';
+import { Router } from '@angular/router';    
 
 @Component({
   selector: 'app-list-of-products',
@@ -14,7 +15,7 @@ export class ListOfProductsComponent implements OnInit {
     new Product(3, 'A300', 'SuperSneaker3', new Date(2022, 3), 300),
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     var productsAsJSON = window.localStorage.getItem('products');
 
     var productList = JSON.parse(productsAsJSON) as unknown as Array<Product>;
@@ -23,4 +24,8 @@ export class ListOfProductsComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onClickProductEdit(productId: number, event?: MouseEvent){
+    this.router.navigate(['/list-of-products'], { queryParams: { "productId" : productId } });
+  }
 }
