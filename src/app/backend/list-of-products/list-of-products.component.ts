@@ -16,13 +16,13 @@ const products: Array<Product> = [
 export class ListOfProductsComponent implements OnInit {
 
   dataSource = products;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'edit'];
 
   constructor(private router: Router) {
     var productsAsJSON = window.localStorage.getItem('products');
 
     var productList = JSON.parse(productsAsJSON) as unknown as Array<Product>;
-    
+
     this.dataSource = productList;
   }
 

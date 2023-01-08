@@ -57,6 +57,22 @@
     <td mat-cell *matCellDef="let element">{{ element.price }}</td>
   </ng-container>
 
+  <ng-container matColumnDef="edit">
+    <th mat-header-cell *matHeaderCellDef>Edit</th>
+    <td mat-cell *matCellDef="let element">
+      <button
+      type="button"
+      id="editProduct"
+      class="button"
+      (click)="onClickProductEdit(element.id, $event)"
+      mat-button
+      >
+      <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  
+</ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

@@ -84,10 +84,12 @@ export class CreateProductComponent implements OnInit {
 
       var productList = JSON.parse(productsAsJSON) as unknown as Array<Product>;
 
-      // if it is a new cerated product
-      if (this.originalProduct == undefined) {
+      console.log("this.originalProduct => " + this.originalProduct);
+
+      // if it is a new created product
+      if (this.originalProduct == null) {
         console.log('ProductId:' + this.productId);
-        console.log('this.productId < 1');
+
         // iterate over the list of products
         // get the highest product id
         var maxId = 0;
@@ -97,7 +99,8 @@ export class CreateProductComponent implements OnInit {
           }
         }
 
-        this.product.id = maxId;
+        this.product.id = maxId + 1;
+
       } else {
         console.log('Beginne das alte Product aus dem Array zu löschen');
         console.log(
