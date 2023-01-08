@@ -12,13 +12,16 @@
     <td>{{ product.yearOfPublication | date: 'short' }}</td>
     <td>{{ product.price }}</td>
     <td>
+      
       <button
       type="button"
       id="editProduct"
       class="button"
-      (click)="onClickProductEdit({{product.id}}, $event)"
-    >
-      <button type="button" mat-button><mat-icon>edit</mat-icon></button>
+      (click)="onClickProductEdit(product.id, $event)"
+      mat-button
+      >
+      <mat-icon>edit</mat-icon>
+      </button>
     </td>
   </tr>
 </table>
