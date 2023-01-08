@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../../DataTransferObjects/Product';
 
 export interface PeriodicElement {
   name: string;
@@ -20,6 +21,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
 ];
 
+const products: Array<Product> = [
+  new Product(1, 'A100', 'SuperSneaker1', new Date(2022, 1), 100),
+  new Product(2, 'A200', 'SuperSneaker2', new Date(2022, 2), 200),
+  new Product(3, 'A300', 'SuperSneaker3', new Date(2022, 3), 300),
+];
+
 @Component({
   selector: 'app-table-basic-example',
   templateUrl: './table-basic-example.component.html',
@@ -27,7 +34,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TableBasicExampleComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource = products;
 
   constructor() {}
 
