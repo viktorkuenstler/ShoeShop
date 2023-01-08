@@ -25,7 +25,6 @@ export class ListOfProductsComponent implements OnInit {
 
   ngOnInit() {}
 
-  
   onClickProductEdit(productId: any, event?: MouseEvent){
     console.log(productId);
     this.router.navigate(['/create-product'], { queryParams: { "productId" : productId } });

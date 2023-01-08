@@ -34,5 +34,8 @@
     </tr>
   </table>
 </form>
-<app-progress-spinner-overview></app-progress-spinner-overview>
+<div *ngIf="isSpinnerActivated">
+  <app-progress-spinner-overview></app-progress-spinner-overview>
+</div>
+
 

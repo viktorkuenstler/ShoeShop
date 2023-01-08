@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 import { Product } from '../../DataTransferObjects/Product';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';  
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-product',
@@ -15,6 +15,7 @@ export class CreateProductComponent implements OnInit {
   product: Product;
   productId: number;
   originalProduct: Product;
+  isSpinnerActivated: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router) {
     this.product = new Product(1, '', '', new Date(2022, 1), 100);
@@ -130,7 +131,14 @@ export class CreateProductComponent implements OnInit {
       window.localStorage.setItem('products', JSON.stringify(productList));
       console.log('Wurde gespeichert' + JSON.stringify(productList));
 
-      this.router.navigate(['/list-of-products']);
+      this.isSpinnerActivated = true;
+
+      setTimeout( () => { 
+        this.isSpinnerActivated = false;
+        this.router.navigate(['/list-of-products']); 
+      },
+      2000);
+
     }
   }
 }
