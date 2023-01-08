@@ -1,0 +1,19 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+}
+
+.login-account-icon {
+  font-size: 5.00em;
+  width: 100px;
+  height: 100px;
+}
+
+.login-item-account{
+  width: 100px;
+  height: 100px;
+}

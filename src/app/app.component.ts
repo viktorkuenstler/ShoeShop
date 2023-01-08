@@ -26,4 +26,10 @@ export class AppComponent implements OnInit {
     localStorage.clear();
     this.document.location.reload()
   }
+
+  onClickLogin(event?: MouseEvent) {
+    this.router.navigate(['/login']);
+  }
+
+  
 }

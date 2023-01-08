@@ -1,0 +1,22 @@
+<form class="login-container">
+  <div class="login-item-account">
+      <mat-icon class="login-account-icon">account_circle</mat-icon>
+  </div>
+    <div class="login-item">
+      <mat-form-field appearance="fill">
+        <mat-label>E-Mail</mat-label>
+        <input matInput #first />
+        <mat-hint *ngIf="firstNameAutofilled">Autofilled!</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="login-item">
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput #last />
+        <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="login-item">
+      <button mat-raised-button>Anmelden</button>
+    </div>
+</form>

@@ -15,13 +15,17 @@
         <input name="name" [(ngModel)]="product.name" />
       </td>
     </tr>
-    <!--
-  <tr>
-    <td>Year of Publication:</td>
-    <td><input type="date" /></td>
-  </tr>
 
--->
+    <tr>
+      <td>Year of Publication:</td>
+      <td>
+        <input
+          name="yearOfPublication"
+          type="date"
+          [(ngModel)]="product.yearOfPublication"
+        />
+      </td>
+    </tr>
     <tr>
       <td>Price:</td>
       <td><input name="price" [(ngModel)]="product.price" /></td>
@@ -37,5 +41,3 @@
 <div *ngIf="isSpinnerActivated">
   <app-progress-spinner-overview></app-progress-spinner-overview>
 </div>
-
-

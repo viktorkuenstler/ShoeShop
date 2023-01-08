@@ -3,6 +3,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Product } from '../../DataTransferObjects/Product';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-product',
@@ -18,11 +19,24 @@ export class CreateProductComponent implements OnInit {
   isSpinnerActivated: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    this.product = new Product(1, '', '', new Date(2022, 1), 100);
+    this.product = new Product(1, '', '', new Date(2022, 1), 0);
     this.originalProduct = null;
   }
 
+  createProductForm: FormGroup;
+
   ngOnInit() {
+    /*
+    this.createProductForm = new FormGroup({
+      name: new FormControl(this.product.name, [
+        Validators.required,
+        Validators.minLength(4),
+      ]),
+      price: new FormControl(this.product.price, Validators.required)
+    },  { validators: identityRevealedValidator });
+    
+    */
+
     this.route.queryParams.subscribe((params) => {
       console.log(params);
 
@@ -84,7 +98,7 @@ export class CreateProductComponent implements OnInit {
 
       var productList = JSON.parse(productsAsJSON) as unknown as Array<Product>;
 
-      console.log("this.originalProduct => " + this.originalProduct);
+      console.log('this.originalProduct => ' + this.originalProduct);
 
       // if it is a new created product
       if (this.originalProduct == null) {
@@ -100,7 +114,6 @@ export class CreateProductComponent implements OnInit {
         }
 
         this.product.id = maxId + 1;
-
       } else {
         console.log('Beginne das alte Product aus dem Array zu löschen');
         console.log(
@@ -136,12 +149,10 @@ export class CreateProductComponent implements OnInit {
 
       this.isSpinnerActivated = true;
 
-      setTimeout( () => { 
+      setTimeout(() => {
         this.isSpinnerActivated = false;
-        this.router.navigate(['/list-of-products']); 
-      },
-      2000);
-
+        this.router.navigate(['/list-of-products']);
+      }, 2000);
     }
   }
 }
