@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateProductComponent } from './backend/create-product/create-product.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+//import { PriceValidatorDirective } from './backend/shared/price-validator.directive';
 
 const modules = [
   BrowserModule,
@@ -56,6 +57,7 @@ const modules = [
     TableBasicExampleComponent,
     LoginComponent,
   ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

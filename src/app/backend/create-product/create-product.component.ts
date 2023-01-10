@@ -4,6 +4,7 @@ import { Product } from '../../DataTransferObjects/Product';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PriceValidatorDirective } from '../shared/price-validator.directive';
 
 @Component({
   selector: 'app-create-product',
@@ -27,15 +28,22 @@ export class CreateProductComponent implements OnInit {
 
   ngOnInit() {
     /*
-    this.createProductForm = new FormGroup({
-      name: new FormControl(this.product.name, [
-        Validators.required,
-        Validators.minLength(4),
-      ]),
-      price: new FormControl(this.product.price, Validators.required)
-    },  { validators: identityRevealedValidator });
-    
+    const priceControl = new FormControl('', {
+      asyncValidators: [this.priceValidator.validate.bind(this.priceValidator)],
+      updateOn: 'blur'
+    });
+    priceControl.setValue(this.product.price.toString());
     */
+
+    this.createProductForm = new FormGroup(
+      {
+        name: new FormControl(),
+        price: new FormControl(),
+        yearOfPublication: new FormControl(),
+        articleNumber: new FormControl(),
+      },
+      { validators: PriceValidatorDirective }
+    );
 
     this.route.queryParams.subscribe((params) => {
       console.log(params);
